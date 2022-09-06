@@ -25,12 +25,12 @@ const getIndexWord = (texts) => _.fromPairs(
 
 const getWords = (text) => _.compact(splitText(text))
 
-const getSequences = (texts, wordIndex) => (
+const getSequences = (texts) => (
   _.map(
     texts, (text) => (
       _.map(getWords(text), (word) => (
         _.toNumber(
-          _.get(wordIndex, word)
+          _.get(getWordIndex(texts), word)
         )
       ))
     )
@@ -45,7 +45,7 @@ export const tokenizer = (texts) => ({
   indexWord: getIndexWord(texts),
   wordIndex: getWordIndex(texts),
   wordCounts: getWordCounts(texts),
-  sequences: getSequences(texts, getWordIndex(texts))
+  sequences: getSequences(texts)
 })
 
 export default tokenizer
