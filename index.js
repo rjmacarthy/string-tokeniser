@@ -51,5 +51,3 @@ export const tokeniser = _.memoize((texts) => ({
   wordCounts: getWordCounts(texts),
   sequences: getSequences(texts)
 }))
-
-export default tokeniser
