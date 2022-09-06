@@ -9,11 +9,15 @@ const splitText = (text) => _.split(
   ), SEPARTOR
 )
 
-const splitTexts = (texts) => _.map(texts, (text) =>
-  splitText(text)
+const splitTexts = (texts) => (
+  _.map(texts, (text) =>
+    splitText(text)
+  )
 )
 
-const flattenSplitTexts = (texts) => _.compact(_.flatten(splitTexts(texts)))
+const flattenSplitTexts = (texts) => _.compact(_.flatten(
+  splitTexts(texts))
+)
 
 const getIndexWord = (texts) => _.fromPairs(
   _.map(
