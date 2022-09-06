@@ -30,8 +30,7 @@ const getIndexWord = (texts) => _.fromPairs(
 const getWords = (text) => _.compact(splitText(text))
 
 const getSequences = (texts) => (
-  _.map(
-    texts, (text) => (
+  _.map(texts, (text) => (
       _.map(getWords(text), (word) => (
         _.toNumber(
           _.get(getWordIndex(texts), word)
