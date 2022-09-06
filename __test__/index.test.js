@@ -1,7 +1,7 @@
-import { tokenizer } from '../index'
+import { tokeniser } from '../index'
 import { texts, sequences, wordCounts, wordIndex, indexWord } from './fixtures'
 
-test('tokenizer tests', () => {
+test('tokeniser tests', () => {
   console.log(tokenizer(texts).wordCounts)
   expect(tokenizer(texts).sequences).toStrictEqual(sequences)
   expect(tokenizer(texts).wordCounts).toStrictEqual(wordCounts)
