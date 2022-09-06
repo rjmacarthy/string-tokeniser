@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "rjmacarthy",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.21"
   },
