@@ -19,6 +19,16 @@ const getIndexWord = (texts) => _.fromPairs(
   )
 )
 
+const getWordIndex = _.memoize(
+  (texts) => _.invert(getIndexWord(texts))
+)
+
+const getWordCounts = (texts) => _.countBy(
+  _.compact(
+    _.flatMap(texts, (text) => splitText(text))
+  )
+)
+
 const getSequences = (texts) => (
   _.map(texts, (text) => (
     _.map(_.compact(splitText(text)), (word) => (
@@ -27,16 +37,6 @@ const getSequences = (texts) => (
       )
     ))
   )
-  )
-)
-
-const getWordIndex = _.memoize(
-  (texts) => _.invert(getIndexWord(texts))
-)
-
-const getWordCounts = (texts) => _.countBy(
-  _.compact(
-    _.flatMap(texts, (text) => splitText(text))
   )
 )
 
