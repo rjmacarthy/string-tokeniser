@@ -36,8 +36,7 @@ const getSequences = (texts) => (
         _.get(getWordIndex(texts), word)
       )
     ))
-  )
-  )
+  ))
 )
 
 export const tokeniser = _.memoize((texts) => ({
