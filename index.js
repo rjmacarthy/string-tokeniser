@@ -3,20 +3,12 @@ import _ from 'lodash'
 const FILTER_REGEX = /[\\.,/#!$£%"@+-^&*;:{}=\-_.`~()]/g
 const SEPARTOR = ' '
 
-const splitText = (text) => _.split(
-  _.toLower(
-    _.trim(_.replace(text, FILTER_REGEX, ''))
-  ), SEPARTOR
-)
-
-const splitTexts = (texts) => (
-  _.map(texts, (text) =>
-    splitText(text)
+const splitText = _.memoize(
+  (text) => _.split(
+    _.toLower(
+      _.trim(_.replace(text, FILTER_REGEX, ''))
+    ), SEPARTOR
   )
-)
-
-const flattenSplitTexts = (texts) => _.compact(_.flatten(
-  splitTexts(texts))
 )
 
 const getIndexWord = (texts) => _.fromPairs(
@@ -27,22 +19,26 @@ const getIndexWord = (texts) => _.fromPairs(
   )
 )
 
-const getWords = (text) => _.compact(splitText(text))
-
 const getSequences = (texts) => (
   _.map(texts, (text) => (
-      _.map(getWords(text), (word) => (
-        _.toNumber(
-          _.get(getWordIndex(texts), word)
-        )
-      ))
-    )
+    _.map(_.compact(splitText(text)), (word) => (
+      _.toNumber(
+        _.get(getWordIndex(texts), word)
+      )
+    ))
+  )
   )
 )
 
-const getWordIndex = (texts) => _.invert(getIndexWord(texts))
+const getWordIndex = _.memoize(
+  (texts) => _.invert(getIndexWord(texts))
+)
 
-const getWordCounts = (texts) => _.countBy(flattenSplitTexts(texts))
+const getWordCounts = (texts) => _.countBy(
+  _.compact(
+    _.flatMap(texts, (text) => splitText(text))
+  )
+)
 
 export const tokeniser = _.memoize((texts) => ({
   indexWord: getIndexWord(texts),
