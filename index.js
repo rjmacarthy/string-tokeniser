@@ -41,11 +41,11 @@ const getWordIndex = (texts) => _.invert(getIndexWord(texts))
 
 const getWordCounts = (texts) => _.countBy(flattenSplitTexts(texts))
 
-export const tokeniser = (texts) => ({
+export const tokeniser = _.memoize((texts) => ({
   indexWord: getIndexWord(texts),
   wordIndex: getWordIndex(texts),
   wordCounts: getWordCounts(texts),
   sequences: getSequences(texts)
-})
+}))
 
 export default tokeniser
