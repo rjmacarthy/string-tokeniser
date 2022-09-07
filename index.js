@@ -4,10 +4,12 @@ const FILTER_REGEX = /[\\.,/#!$£%"@+-^&*;:{}=\-_.`~()]/g
 const SEPARTOR = ' '
 
 const splitText = _.memoize(
-  (text) => _.split(
-    _.toLower(
-      _.trim(_.replace(text, FILTER_REGEX, ''))
-    ), SEPARTOR
+  (text) => _.compact(
+    _.split(
+      _.toLower(
+        _.trim(_.replace(text, FILTER_REGEX, ''))
+      ), SEPARTOR
+    )
   )
 )
 
@@ -31,7 +33,7 @@ const getWordCounts = (texts) => _.countBy(
 
 const getSequences = (texts) => (
   _.map(texts, (text) => (
-    _.map(_.compact(splitText(text)), (word) => (
+    _.map(splitText(text), (word) => (
       _.toNumber(
         _.get(getWordIndex(texts), word)
       )
