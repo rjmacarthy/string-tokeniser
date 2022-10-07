@@ -54,4 +54,7 @@ export const padded = [
 
 export const yLabels = [7, 7]
 
-export const categoricalY = [[0, 0, 0, 0, 0, 0, 1, 0]]
+export const categoricalY = [
+  [0, 0, 0, 0, 0, 0, 1, 0],
+  [0, 0, 0, 0, 0, 0, 1, 0],
+]

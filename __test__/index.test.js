@@ -17,5 +17,6 @@ test('tokeniser tests', () => {
   expect(tokeniser(texts).indexWord).toStrictEqual(indexWord)
   expect(pad(tokeniser(texts))).toStrictEqual(padded)
   expect(labels(pad(tokeniser(texts)))).toStrictEqual(yLabels)
+  console.log(categorical(labels(pad(tokeniser(texts)))))
   expect(categorical(labels(pad(tokeniser(texts))))).toStrictEqual(categoricalY)
 })

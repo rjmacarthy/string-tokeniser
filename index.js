@@ -29,13 +29,6 @@ const getSequences = (texts) =>
     ),
   )
 
-const tokeniser = _.memoize((texts) => ({
-  indexWord: getIndexWord(texts),
-  wordIndex: getWordIndex(texts),
-  wordCounts: getWordCounts(texts),
-  sequences: getSequences(texts),
-}))
-
 const getMaxLen = _.memoize((x) => _.max(_.map(x.sequences, (n) => _.size(n))))
 
 const pad = (x) =>
@@ -47,11 +40,18 @@ const pad = (x) =>
 const labels = (x) => _.map(x, (r) => _.last(r))
 
 const categorical = (x) =>
-  _.map([_.first(x)], (i) => {
+  _.map(x, (i) => {
     let r = _.fill(Array(_.max(x) + 1), 0)
     r[i - 1] = 1
     return r
   })
+
+const tokeniser = _.memoize((texts) => ({
+  indexWord: getIndexWord(texts),
+  wordIndex: getWordIndex(texts),
+  wordCounts: getWordCounts(texts),
+  sequences: getSequences(texts),
+}))
 
 module.exports = {
   labels,
