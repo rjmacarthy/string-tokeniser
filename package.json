@@ -1,6 +1,6 @@
 {
   "name": "string-tokeniser",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A simple string tokeniser",
   "main": "index.js",
   "scripts": {
