@@ -1,6 +1,6 @@
 ### string-tokeniser
 
-A simple implementation of [Keras Tokenizer](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/text/Tokenizer) in JavaScript.
+A simple implementation inspired by [Keras Tokenizer](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/text/Tokenizer) in JavaScript.
 
 ```
 npm i string-tokeniser
