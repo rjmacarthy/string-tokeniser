@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "standard ./index.js",
-    "lint:fix": "standard --fix ./index.js"
+    "lint": "standard ./lib",
+    "lint:fix": "standard --fix ./lib"
   },
   "keywords": [],
   "author": "rjmacarthy",
