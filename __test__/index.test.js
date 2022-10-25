@@ -10,6 +10,7 @@ import {
   yLabels,
   categoricalY,
 } from './fixtures'
+import { cbow } from '../lib/cbow'
 
 test('tokeniser tests', () => {
   expect(tokeniser(texts).sequences).toStrictEqual(sequences)
@@ -21,4 +22,9 @@ test('tokeniser tests', () => {
   expect(getCategorical(getLabels(getPadded(tokeniser(texts))))).toStrictEqual(
     categoricalY,
   )
+})
+
+test('cbow skip gram', () => {
+  console.log(cbows(['i am so cool yea!']))
+  
 })
