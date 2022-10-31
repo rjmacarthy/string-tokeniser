@@ -1,6 +1,6 @@
 export const texts = [
-  'this is &*&^*$%£(^&) the best +- tokenizer !"£$%^&*() in the world',
-  'this is also "£$"£$"£$^&&*(" the bestest best !"£$%^&*() tokenizer in the entire world',
+  'this is &*&^*$%£(^&) the best, +- tokenizer !"£$%^&*() in the world.',
+  'this is also "£$"£$"£$^&&*(" the bestest best !"£$%^&*() tokenizer, in the entire world.',
 ]
 
 export const indexWord = {
@@ -15,6 +15,28 @@ export const indexWord = {
   9: 'bestest',
   10: 'entire',
 }
+
+export const wordTokens = [
+  ['this', 'is', 'the', 'best', 'tokenizer', 'in', 'the', 'world'],
+  [
+    'this',
+    'is',
+    'also',
+    'the',
+    'bestest',
+    'best',
+    'tokenizer',
+    'in',
+    'the',
+    'entire',
+    'world',
+  ],
+]
+
+export const wordTokenIndex = [
+  [2, 3, 1, 4, 5, 6, 1, 7],
+  [2, 3, 8, 1, 9, 4, 5, 6, 1, 10, 7],
+]
 
 export const wordIndex = {
   the: '1',
