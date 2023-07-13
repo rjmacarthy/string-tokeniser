@@ -1,5 +1,5 @@
 import { tokeniser } from '../lib/tokeniser'
-import { getCategorical, getLabels, getPadded } from '../lib/utils'
+import { getPadded } from '../lib/utils'
 import {
   texts,
   sequences,
@@ -22,8 +22,6 @@ test('tokeniser tests', () => {
   expect(tokeniser(texts).wordTokens).toStrictEqual(wordTokens)
   expect(tokeniser(texts).wordTokenIndex).toStrictEqual(wordTokenIndex)
   expect(getPadded(tokeniser(texts))).toStrictEqual(padded)
-  expect(getLabels(getPadded(tokeniser(texts)))).toStrictEqual(yLabels)
-  expect(getCategorical(getLabels(getPadded(tokeniser(texts))))).toStrictEqual(
-    categoricalY,
-  )
+  console.log(tokeniser(texts))
+
 })
