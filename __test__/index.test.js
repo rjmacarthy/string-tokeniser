@@ -5,7 +5,6 @@ import {
   wordCounts,
   wordIndex,
   indexWord,
-  
 } from './fixtures'
 
 test('tokeniser tests', () => {
