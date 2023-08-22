@@ -6,13 +6,13 @@ const cleanText = (text) =>
 
 const splitText = (text) => _.compact(cleanText(text).split(/\s+/))
 
-const countWords = (texts) =>
+const getWordCounts = (texts) =>
   _.countBy(_.flatten(_.map(texts, (text) => splitText(text))))
 
 const getSortedWords = (wordCounts) =>
   _.orderBy(_.keys(wordCounts), (word) => wordCounts[word], 'desc')
 
-const getWordIndexes = (sortedWords) =>
+const getWordIndex = (sortedWords) =>
   _.invert(_.zipObject(_.range(1, _.size(sortedWords) + 1), sortedWords))
 
 const getWordSequences = (texts, wordIndex) =>
@@ -21,9 +21,9 @@ const getWordSequences = (texts, wordIndex) =>
   )
 
 const tokeniser = (texts) => {
-  const wordCounts = countWords(texts)
+  const wordCounts = getWordCounts(texts)
   const sortedWords = getSortedWords(wordCounts)
-  const wordIndex = getWordIndexes(sortedWords)
+  const wordIndex = getWordIndex(sortedWords)
 
   return {
     indexWord: _.zipObject(_.range(1, _.size(sortedWords) + 1), sortedWords),
