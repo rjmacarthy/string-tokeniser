@@ -1,15 +1,17 @@
 ### string-tokeniser
 
-A simple implementation inspired by [Keras Tokenizer](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/text/Tokenizer) in JavaScript.
+### Install
 
 ```
 npm i string-tokeniser
 ```
 
-```
-import { tokeniser } from 'string-tokeniser'
+### Usage
 
-console.log(tokeniser(['hello world', 'how are you?']))
+```
+import { fit } from 'string-tokeniser'
+
+console.log(fit(['hello world', 'how are you?']))
 ```
 
 ```
@@ -20,5 +22,7 @@ console.log(tokeniser(['hello world', 'how are you?']))
   sequences: [ [ 1, 2 ], [ 3, 4, 5 ] ]
 }
 ```
+
+### Licence
 
 MIT

@@ -1,6 +1,6 @@
 export const texts = [
   'this is &*&^*$%£(^&) the best, +- tokenizer !"£$%^&*() in the world.',
-  'this is also "£$"£$"£$^&&*(" the bestest best !"£$%^&*() tokenizer, in the entire world.',
+  'this is also "£$"£$"£$^&&*(" the bestest best !"£$%^&*() tokenizer, in the entire world.'
 ]
 
 export const indexWord = {
@@ -13,7 +13,7 @@ export const indexWord = {
   7: 'world',
   8: 'also',
   9: 'bestest',
-  10: 'entire',
+  10: 'entire'
 }
 
 export const wordTokens = [
@@ -29,13 +29,13 @@ export const wordTokens = [
     'in',
     'the',
     'entire',
-    'world',
-  ],
+    'world'
+  ]
 ]
 
 export const wordTokenIndex = [
   [2, 3, 1, 4, 5, 6, 1, 7],
-  [2, 3, 8, 1, 9, 4, 5, 6, 1, 10, 7],
+  [2, 3, 8, 1, 9, 4, 5, 6, 1, 10, 7]
 ]
 
 export const wordIndex = {
@@ -48,7 +48,7 @@ export const wordIndex = {
   world: '7',
   also: '8',
   bestest: '9',
-  entire: '10',
+  entire: '10'
 }
 
 export const wordCounts = {
@@ -61,15 +61,15 @@ export const wordCounts = {
   world: 2,
   also: 1,
   bestest: 1,
-  entire: 1,
+  entire: 1
 }
 
 export const sequences = [
   [2, 3, 1, 4, 5, 6, 1, 7],
-  [2, 3, 8, 1, 9, 4, 5, 6, 1, 10, 7],
+  [2, 3, 8, 1, 9, 4, 5, 6, 1, 10, 7]
 ]
 
 export const padded = [
   [0, 0, 0, 2, 3, 1, 4, 5, 6, 1, 7],
-  [2, 3, 8, 1, 9, 4, 5, 6, 1, 10, 7],
+  [2, 3, 8, 1, 9, 4, 5, 6, 1, 10, 7]
 ]

@@ -12,7 +12,7 @@ type IndexWord = {
 
 type Sequence = number[];
 
-interface StringTokenizer {
+interface Tokenizer {
   wordIndex: WordIndex;
   indexWord: IndexWord;
   wordCounts: WordCount;
@@ -25,8 +25,8 @@ declare module "string-tokeniser" {
    * @param texts An array of text strings to be tokenized.
    * @returns A StringTokenizer object.
    */
-  export function tokeniser(
+  export function fit(
     texts: string[],
     options: { clean: boolean }
-  ): StringTokenizer;
+  ): Tokenizer;
 }

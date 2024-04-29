@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest",
     "lint": "standard ./lib",
-    "lint:fix": "standard --fix ./lib"
+    "lint:fix": "standard --fix index.js"
   },
   "keywords": [],
   "author": "rjmacarthy",
