@@ -27,6 +27,5 @@ declare module "string-tokeniser" {
    */
   export function fit(
     texts: string[],
-    options: { clean: boolean }
   ): Tokenizer;
 }
